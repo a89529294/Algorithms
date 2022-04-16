@@ -1,6 +1,7 @@
-const list = [1, 3, 5, 7, 9];
+//Speed is O(log n)
+//log is base 2
 
-const randomNum = Math.ceil(Math.random() * 100);
+const list = [1, 3, 5, 7, 9];
 
 function binarySearch(list, target) {
   let leftIdx = 0;
