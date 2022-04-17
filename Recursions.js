@@ -3,7 +3,7 @@
 // 2. Figure out how to reduce your problem and get to the base case.
 
 // Example 1. Find biggest suqare that fills up the whole rectangle (Euclidean Algorithm)
-// In this example the base case is where one side is a multiple of the other side
+// The base case is where one side is a multiple of the other side
 
 function findBiggestSquare(width, height) {
   if (width % height === 0 || height % width === 0) {
@@ -22,7 +22,7 @@ function findBiggestSquare(width, height) {
 console.log(findBiggestSquare(1680, 640));
 
 // Example 2. Summation of an array
-// base case is when the array is one single item
+// base case is when the array is empty
 
 // assuming arr is an array of numbers
 function sum(arr) {
@@ -33,3 +33,20 @@ function sum(arr) {
 }
 
 console.log(sum([1, 2, 3, 101]));
+
+// Example 3. Binary Search using recursion
+// base case is where array[mid] === target
+
+function binarySearch(arr, target) {
+  const left = 0;
+  const right = arr.length - 1;
+  const mid = parseInt((left + right) / 2);
+
+  if (arr[mid] === undefined) return "not found";
+  if (arr[mid] === target) return target;
+  if (arr[mid] > target) return binarySearch(arr.slice(0, mid - 1), target);
+  return binarySearch(arr.slice(mid + 1), target);
+}
+
+console.log(binarySearch([-10, 1, 10, 999], 999));
+console.log(binarySearch([-10, 1, 10, 999], 0));
