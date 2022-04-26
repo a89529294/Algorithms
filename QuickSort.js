@@ -4,6 +4,7 @@
 // If we choose the first element the speed is O(n^2)
 // If we choose a random element the speed is O(nlog(n))
 
+//ascending order
 function quickSort(arr) {
   if (arr.length < 2) return arr;
   if (arr.length === 2) return arr[0] <= arr[1] ? arr : [arr[1], arr[0]];
